@@ -1,0 +1,135 @@
+print(" ")
+print("Gomez Garcia Andres Noe 3W 1184: practica 2")
+print(" ")
+
+# 1. Función que muestra el saludo "Hey amigos!" cada vez que se le pida
+def saludar():
+    veces = int(input("¿Cuántas veces quieres que te salude? "))
+    contador = 0
+    while contador < veces:
+        print("Hey amigos!")
+        contador += 1
+
+# 2. Función que despliega un saludo con el nombre dado
+def saludar_personalizado():
+    nombre = input("Por favor, ingresa tu nombre: ")
+    print("¡Hola " + nombre + "!")
+
+# 3. Función que calcula el factorial de un número entero positivo
+def fac():
+    n = int(input("Por favor, ingresa un número entero positivo para calcular su factorial: "))
+    if n < 0:
+        return "El número debe ser positivo."
+    resultado = 1
+    contador = 1
+    while contador <= n:
+        resultado = resultado * contador
+        contador = contador + 1
+    return resultado
+
+# 4. Función que calcula el total de una factura luego del IVA
+def total_factura():
+    cantidad = float(input("Por favor, ingresa la cantidad sin IVA: "))
+    iva_input = input("Por favor, ingresa el porcentaje de IVA o presiona Enter para usar el 21%: ")
+    if iva_input == "":
+        iva = 21
+    else:
+        iva = float(iva_input)
+    total = cantidad + (cantidad * iva / 100)
+    return total
+
+# 5. Funciones para calcular el área de un círculo y el volumen de un cilindro
+import math
+
+def area_circulo():
+    radio = float(input("Por favor, ingresa el radio del círculo: "))
+    return math.pi * radio * radio
+
+def vol_cilindro():
+    radio = float(input("Por favor, ingresa el radio del cilindro: "))
+    altura = float(input("Por favor, ingresa la altura del cilindro: "))
+    return area_circulo() * altura
+
+# 6. Función que valida una dirección de email con input()
+def validar_email():
+    email = input("Por favor, ingresa tu dirección de email: ")
+    if "@" in email:
+        return "La dirección de email es válida."
+    else:
+        return "La dirección de email no es válida."
+
+# 7. Función que regresa la longitud de la última palabra en un string
+def longitud_ultima_palabra():
+    frase = input("Por favor, ingresa una frase: ")
+    palabras = frase.split()
+    ultima_palabra = palabras[len(palabras) - 1]
+    contador = 0
+    for letra in ultima_palabra:
+        contador = contador + 1
+    return contador
+
+# 8. Función que devuelve el mayor de tres números
+def mayor():
+    a = int(input("Ingresa el primer número: "))
+    b = int(input("Ingresa el segundo número: "))
+    c = int(input("Ingresa el tercer número: "))
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+
+# 9. Funciones para sumar y multiplicar los números de una lista
+def suma():
+    lista = input("Ingresa los números separados por espacios: ").split()
+    lista = [int(num) for num in lista]
+    resultado = 0
+    contador = 0
+    while contador < len(lista):
+        resultado = resultado + lista[contador]
+        contador = contador + 1
+    return resultado
+
+def multip():
+    lista = input("Ingresa los números separados por espacios: ").split()
+    lista = [int(num) for num in lista]
+    resultado = 1
+    contador = 0
+    while contador < len(lista):
+        resultado = resultado * lista[contador]
+        contador = contador + 1
+    return resultado
+
+# 10. Función que verifica si un carácter es una vocal (sin usar lower)
+def es_vocal():
+    caracter = input("Por favor, ingresa un carácter: ")
+    if caracter == 'a' or caracter == 'e' or caracter == 'i' or caracter == 'o' or caracter == 'u' or caracter == 'A' or caracter == 'E' or caracter == 'I' or caracter == 'O' or caracter == 'U':
+        return True
+    else:
+        return False
+
+# 11. Función que calcula la distancia dirigida entre dos puntos
+def distancia_dirigida():
+    x1 = float(input("Ingresa la coordenada x1: "))
+    y1 = float(input("Ingresa la coordenada y1: "))
+    x2 = float(input("Ingresa la coordenada x2: "))
+    y2 = float(input("Ingresa la coordenada y2: "))
+    distancia_x = x2 - x1
+    distancia_y = y2 - y1
+    return distancia_x, distancia_y
+
+# Ejemplo de uso
+saludar()
+saludar_personalizado()
+print("Factorial: " + str(fac()))
+print("Total de factura: " + str(total_factura()))
+print("Área de un círculo: " + str(area_circulo()))
+print("Volumen de un cilindro: " + str(vol_cilindro()))
+print(validar_email())
+print("Longitud de la última palabra: " + str(longitud_ultima_palabra()))
+print("Mayor de tres números: " + str(mayor()))
+print("Suma de la lista: " + str(suma()))
+print("Multiplicación de la lista: " + str(multip()))
+print("¿Es vocal?: " + str(es_vocal()))
+print("Distancia dirigida: " + str(distancia_dirigida()))
